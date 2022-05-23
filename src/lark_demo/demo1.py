@@ -24,19 +24,20 @@ class CalcTransformer(Transformer):
         return tree[0]
 
     def number(self, tree):
-        print(f'number={tree}')
+        print(f"number={tree}")
         return int(tree[0])
 
 
 def calc(text: str) -> None:
     from importlib.resources import files
+
     path = files("lark_demo") / "grammar/calc.lark"
     print(path)
     grammar = path.read_text(encoding="utf-8")
     print(grammar)
     print(text)
 
-#    with open(path, encoding="utf-8") as grammar:
+    #    with open(path, encoding="utf-8") as grammar:
     parser = Lark(grammar, start="expr")
     print(parser)
     tree = parser.parse(text)
