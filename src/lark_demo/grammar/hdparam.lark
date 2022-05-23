@@ -1,0 +1,11 @@
+
+hdparam: disk ata_device
+
+disk: "/dev/sd" drive_letter ":"
+
+ata_device: "ATA device, with non-removable media"
+
+drive_letter: /[a-z]/
+
+%import common.WS
+%ignore WS
